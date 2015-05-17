@@ -29,7 +29,7 @@ public class CacheService extends Service<CacheServiceConfiguration> {
     public void run(CacheServiceConfiguration configuration,
             Environment environment) throws Exception {
         /** Cache APIs */
-    	String fileName=Integer.toString(configuration.getHttpConfiguration().getPort())+".dat";
+    	String fileName=Integer.toString(configuration.getHttpConfiguration().getPort())+".txt";
         CacheInterface cache = new ChronicleMapCache(fileName);
         environment.addResource(new CacheResource(cache));
         log.info("Loaded resources");
